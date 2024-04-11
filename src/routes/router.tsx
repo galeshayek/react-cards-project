@@ -13,7 +13,7 @@ import CreateCard from "./CreateCard";
 
 export const router = createBrowserRouter([
     {
-        path: "/react-cards-project/",
+        path: "/",
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
@@ -26,25 +26,25 @@ export const router = createBrowserRouter([
                 , element: <UserCard />
             },
             {
-                path: '/react-cards-project/register',
+                path: '/register',
                 element: <Register />
             },
             {
-                path: '/react-cards-project/about',
+                path: '/about',
                 element: <About />
             },
             {
-                path: '/react-cards-project/login',
+                path: '/login',
                 element: <Login />
             }, {
-                path: '/react-cards-project/favcards',
+                path: '/favcards',
                 element: <ProtectedRout><FavCrads /></ProtectedRout>
             }, {
-                path: '/react-cards-project/mycards',
+                path: '/mycards',
                 element: <ProtectedRout><MyCards /></ProtectedRout>
             },
             {
-                path: '/react-cards-project/create',
+                path: '/create',
                 element: <ProtectedRout><CreateCard /></ProtectedRout>
             },
         ],
