@@ -1,0 +1,13 @@
+.container {
+    h2 {
+        @apply text-xl text-center font-bold
+    }
+
+    h3 {
+        @apply text-lg text-center font-semibold pb-1
+    }
+
+    p {
+        @apply pb-3 text-center
+    }
+}

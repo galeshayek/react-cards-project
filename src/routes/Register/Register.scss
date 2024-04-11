@@ -1,0 +1,28 @@
+.registerForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    input {
+        @apply w-full bg-accent dark:bg-accent-dark rounded-md px-2 py-1 border-2 border-primary dark:border-primary-dark;
+
+        &::placeholder {
+            @apply text-slate-500;
+        }
+
+    }
+
+    p {
+        @apply text-red-500 dark:text-red-400 text-center pt-1;
+    }
+
+}
+
+.isBusiness {
+    input {
+        @apply w-5
+    }
+
+    p {
+        @apply text-black dark:text-textDark
+    }
+}

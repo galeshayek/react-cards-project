@@ -1,0 +1,8 @@
+.theme {
+    transition: 300ms all ease-in-out;
+
+    &.light {
+        transform: rotate(180deg);
+    }
+
+}
