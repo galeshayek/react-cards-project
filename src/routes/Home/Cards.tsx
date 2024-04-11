@@ -85,11 +85,18 @@ const Cards = () => {
                                     <Button>
                                         <Link to={`cards/${card._id}`}>View more</Link>
                                     </Button>
-                                    <Button variant='ghost' onClick={() => {
-                                        clickHandler(card._id)
-                                    }}>
-                                        {card.likes.includes(userId ?? '') ? <BsHeartFill className='text-complimentry dark:text-complimentry-dark' /> : <BsHeartFill className='text-slate-400 dark:text-slate-300' />}
-                                    </Button>
+                                    {isLoggedIn && (
+                                        <Button variant='ghost' onClick={() => {
+                                            clickHandler(card._id)
+                                        }}>
+                                            {card.likes.includes(userId ?? '') ? <BsHeartFill className='text-complimentry dark:text-complimentry-dark' /> : <BsHeartFill className='text-slate-400 dark:text-slate-300' />}
+                                        </Button>
+                                    )}
+                                    {!isLoggedIn && (
+                                        <Button variant='ghost'>
+                                            <BsHeartFill className='text-slate-400 dark:text-slate-300' />
+                                        </Button>
+                                    )}
                                 </ButtonGroup>
 
                             </CardFooter>
