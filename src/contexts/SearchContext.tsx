@@ -12,7 +12,8 @@ const SearchContextProvider: FCC = ({ children }) => {
     const [searchValue, setValue] = useState('');
 
     const handleSearch = (search: string) => {
-        setValue(search)
+        const lowerSearch = search.toLowerCase()
+        setValue(lowerSearch)
     }
 
     return (

@@ -27,7 +27,7 @@ const Cards = () => {
 
     useEffect(() => {
         cards.map(() => {
-            const newCards = cards.filter((c: CardType) => c.title.includes(searchValue));
+            const newCards = cards.filter((c: CardType) => c.title.toLowerCase().includes(searchValue));
             setSearch(newCards);
         })
     }, [searchValue, cards])

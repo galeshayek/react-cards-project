@@ -49,7 +49,7 @@ const MyCards = () => {
 
     useEffect(() => {
         myCards.map(() => {
-            const newCards = myCards.filter((c) => c.title.includes(searchValue));
+            const newCards = myCards.filter((c) => c.title.toLowerCase().includes(searchValue));
             setSearch(newCards);
             console.log(newCards)
         })

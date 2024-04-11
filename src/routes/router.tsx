@@ -26,25 +26,25 @@ export const router = createBrowserRouter([
                 , element: <UserCard />
             },
             {
-                path: '/register',
+                path: '/react-cards-project/register',
                 element: <Register />
             },
             {
-                path: '/about',
+                path: '/react-cards-project/about',
                 element: <About />
             },
             {
-                path: '/login',
+                path: '/react-cards-project/login',
                 element: <Login />
             }, {
-                path: '/favcards',
+                path: '/react-cards-project/favcards',
                 element: <ProtectedRout><FavCrads /></ProtectedRout>
             }, {
-                path: '/mycards',
+                path: '/react-cards-project/mycards',
                 element: <ProtectedRout><MyCards /></ProtectedRout>
             },
             {
-                path: '/create',
+                path: '/react-cards-project/create',
                 element: <ProtectedRout><CreateCard /></ProtectedRout>
             },
         ],

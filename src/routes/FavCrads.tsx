@@ -49,7 +49,7 @@ const FavCrads = () => {
 
     useEffect(() => {
         allCards.map(() => {
-            const newCards = allCards.filter((c) => c.title.includes(searchValue));
+            const newCards = allCards.filter((c) => c.title.toLowerCase().includes(searchValue));
             setSearch(newCards);
         })
     }, [searchValue, allCards])
