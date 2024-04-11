@@ -3,13 +3,15 @@ import { FCC } from "../@types/types";
 
 export const SearchContext = createContext({
     searchValue: "",
-    handleSearch: (search: any) => { }
+    // @ts-ignore
+    handleSearch: (search: string) => { }
 });
 
 
 const SearchContextProvider: FCC = ({ children }) => {
     const [searchValue, setValue] = useState('');
-    const handleSearch = (search: any) => {
+
+    const handleSearch = (search: string) => {
         setValue(search)
     }
 

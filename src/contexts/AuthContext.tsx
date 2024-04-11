@@ -6,6 +6,7 @@ import { jwtDecode } from "jwt-decode";
 export const AuthContext = createContext({
     isLoggedIn: false,
     isBiz: false,
+    // @ts-ignore
     login: (jwt: string) => { },
     logout: () => { }
 })
