@@ -13,7 +13,7 @@ import CreateCard from "./CreateCard";
 
 export const router = createBrowserRouter([
     {
-        path: "/react-cards-project",
+        path: "/react-cards-project/",
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
