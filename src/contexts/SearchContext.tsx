@@ -3,7 +3,7 @@ import { FCC } from "../@types/types";
 
 export const SearchContext = createContext({
     searchValue: "",
-    handleSearch: (search: string) => { }
+    handleSearch: (search: any) => { }
 });
 
 
