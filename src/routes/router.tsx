@@ -48,5 +48,7 @@ export const router = createBrowserRouter([
                 element: <ProtectedRout><CreateCard /></ProtectedRout>
             },
         ],
-    },
-]);
+    }
+], {
+    basename: '/react-cards-project'
+});
