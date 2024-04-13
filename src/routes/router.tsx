@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
                 element: <Cards />
             },
             {
-                path: 'cards/:id'
+                path: '/:cardId'
                 , element: <UserCard />
             },
             {

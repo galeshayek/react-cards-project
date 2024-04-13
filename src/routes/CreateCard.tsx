@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form"
-import { CreateCardType } from "../@types/types"
+import { CreateCardType, axiosResponse } from "../@types/types"
 import { PostCard } from "../services/cards"
 import { UrlPattern, emailPattern, phonePattern } from "../Validations/validations"
 import { CardMock } from "../Mock/cardMock"
@@ -22,8 +22,9 @@ const CreateCard = () => {
                     closeButton: false,
                 },
                 error: {
-                    render() {
-                        return "User isn't business or card with same details already exist"
+                    render({ data }) {
+                        // @ts-ignore
+                        return `${data.response.data}`
                     },
                     autoClose: false
                 }

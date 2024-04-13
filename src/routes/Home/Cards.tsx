@@ -12,10 +12,7 @@ const Cards = () => {
     const [cards, setCards] = useState<CardType[]>([]);
     const [cardsSearch, setSearch] = useState<CardType[]>([])
     const { searchValue } = useContext(SearchContext);
-    // const [heart, setHeart] = useState('text-slate-400 dark:text-slate-300');
-    // const changeHeart = () => {
-    //     setHeart(heart == 'text-slate-400 dark:text-slate-300' ? 'text-complimentry dark:text-complimentry-dark' : 'text-slate-400 dark:text-slate-300')
-    // }
+
     const userId = localStorage.getItem('userId')
     useEffect(() => {
         GetCards().then((r) => {
@@ -83,7 +80,7 @@ const Cards = () => {
                             <CardFooter>
                                 <ButtonGroup spacing={5} margin={'auto'}>
                                     <Button>
-                                        <Link to={`cards/${card._id}`}>View more</Link>
+                                        <Link to={`${card._id}`}>View more</Link>
                                     </Button>
                                     {isLoggedIn && (
                                         <Button variant='ghost' onClick={() => {

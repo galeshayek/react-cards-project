@@ -1,12 +1,13 @@
 import { AspectRatio, Button, ButtonGroup, Card, CardBody, CardFooter, CardHeader, Divider, Image, Spacer } from "@chakra-ui/react";
-import { BsHeartFill } from "react-icons/bs";
+import { BsEye, BsHeartFill } from "react-icons/bs";
 import { CardType, RegisterError } from "../@types/types";
 import { useContext, useEffect, useState } from "react";
 import { GetAllMyCards, deleteCard, handleLike } from "../services/cards";
-import { FaPhone, FaTrash } from "react-icons/fa";
+import { FaEye, FaPhone, FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { EditCard } from "../components/EditCard";
 import { SearchContext } from "../contexts/SearchContext";
+import { Link } from "react-router-dom";
 
 const MyCards = () => {
     const [myCards, setMyCards] = useState<CardType[]>([]);
@@ -118,7 +119,10 @@ const MyCards = () => {
                                         address={card.address}
                                     />
 
-                                    <Spacer />
+                                    <Button variant={'solid'}>
+                                        <Link to={`/${card._id}`}><FaEye /> </Link>
+                                    </Button>
+
                                     <Button variant={"ghost"} >
                                         <a href={`tel:${card.phone}`}>
                                             <FaPhone />

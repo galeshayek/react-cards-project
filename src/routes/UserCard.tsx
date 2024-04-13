@@ -5,11 +5,11 @@ import { CardType } from "../@types/types";
 import { Card, CardBody, CardHeader, Divider, Flex, Image } from "@chakra-ui/react";
 
 const UserCard = () => {
-    const { id } = useParams();
+    const { cardId } = useParams();
     const [userCard, setCard] = useState<CardType>();
 
     useEffect(() => {
-        GetCardById(id).then((r) => setCard(r.data))
+        GetCardById(cardId).then((r) => setCard(r.data))
     }, [])
     return (
         <div>
@@ -39,7 +39,7 @@ const UserCard = () => {
                                 <li><span className="text-lg font-semibold">Email: </span>
                                     <a className="cursor-pointer" href={`mailto:${userCard?.email}`} > {userCard?.email}</a></li>
                                 <li><span className="text-lg font-semibold">Website: </span>
-                                    <a className="link text-blue-600" href={userCard?.web} target="_blank" rel="noopener noreferrer">
+                                    <a className="link text-blue-600" href={`${userCard?.web}`} target="_blank" rel="noopener noreferrer">
                                         {userCard?.web}
                                     </a>
                                 </li>

@@ -130,3 +130,5 @@ export type EditCardtype = {
         zip: number;
     };
 }
+
+export type axiosResponse = { response: { data } }
