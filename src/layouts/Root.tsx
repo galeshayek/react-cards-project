@@ -7,7 +7,7 @@ const Root = () => {
     return (
         <div className="flex flex-col min-h-screen tex-black dark:text-textDark">
             <Header />
-            <main className=" flex flex-col flex-auto px-3 py-2">
+            <main className=" flex flex-col px-3 py-2">
                 <Outlet />
             </main>
             <Footer />
