@@ -131,4 +131,3 @@ export type EditCardtype = {
     };
 }
 
-export type axiosResponse = { response: { data } }
