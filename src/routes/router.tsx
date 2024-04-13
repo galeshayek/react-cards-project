@@ -50,5 +50,5 @@ export const router = createBrowserRouter([
         ],
     }
 ], {
-    basename: '/react-cards-project'
+    basename: '/react-cards-project/'
 });
