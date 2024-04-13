@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form"
-import { CreateCardType, axiosResponse } from "../@types/types"
+import { CreateCardType } from "../@types/types"
 import { PostCard } from "../services/cards"
 import { UrlPattern, emailPattern, phonePattern } from "../Validations/validations"
 import { CardMock } from "../Mock/cardMock"
