@@ -1,5 +1,5 @@
 import { AspectRatio, Button, ButtonGroup, Card, CardBody, CardFooter, CardHeader, Divider, Image, Spacer } from "@chakra-ui/react";
-import { BsEye, BsHeartFill } from "react-icons/bs";
+import { BsHeartFill } from "react-icons/bs";
 import { CardType, RegisterError } from "../@types/types";
 import { useContext, useEffect, useState } from "react";
 import { GetAllMyCards, deleteCard, handleLike } from "../services/cards";
