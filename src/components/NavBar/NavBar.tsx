@@ -7,14 +7,14 @@ import image from '../../assets/bizcardhub.svg'
 import { SearchContext } from "../../contexts/SearchContext"
 import { GiEntryDoor } from "react-icons/gi"
 
-const NavBar = () => {
+const NavBar = (props?: any) => {
     const { handleSearch, searchValue } = useContext(SearchContext);
     const navigate = useNavigate()
     const { isLoggedIn, logout, isBiz } = useContext(AuthContext)
     const { colorMode, toggleColorMode } = useColorMode()
     colorMode === 'dark' ? document.body.classList.add('dark') : document.body.classList.remove('dark')
     return (
-        <nav className="flex flex-col md:flex-row justify-between px-3 text-lg ">
+        <nav className="flex flex-col md:flex-row justify-between px-3 text-lg" onClick={props.action}>
             <div className="leftNav flex items-center gap-5 flex-col md:flex-row md:gap-3">
                 <Link to={'/'}>
                     <img src={image} alt="logo" className="h-14 py-2" />

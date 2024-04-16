@@ -49,7 +49,7 @@ const Header = () => {
                     <DrawerContent>
                         <DrawerCloseButton />
                         <DrawerBody>
-                            <NavBar />
+                            <NavBar action={onClose} />
                         </DrawerBody>
                     </DrawerContent>
                 </Drawer>
@@ -75,7 +75,6 @@ const Header = () => {
     } else {
         return (
             <header className="bg-primary dark:bg-primary-dark sticky top-0 translate-y-0 z-10">
-
                 <NavBar />
             </header>
         )

@@ -78,48 +78,47 @@ const Register = () => {
         <form noValidate onSubmit={handleSubmit(onSubmit)} className=" pt-10 registerForm w-3/4 mx-auto flex flex-col  items-center justify-center gap-x-3 gap-y-10">
             {part == 1 && (<>
                 <section>
+                    <label htmlFor="first_name">First Name:</label>
                     <input
                         placeholder="First Name"
                         aria-label="First Name"
                         autoComplete="given-name"
-                        type="text" {
-                        ...register("name.first",
-                            {
-                                required: 'this field is mandatory',
-                                minLength: {
-                                    value: 2,
-                                    message: 'First Name is to short'
-                                },
-                                maxLength: {
-                                    value: 16,
-                                    message: 'First Name is too long'
-                                }
-                            })} />
+                        type="text"
+                        {...register("name.first", {
+                            required: 'this field is mandatory',
+                            minLength: {
+                                value: 2,
+                                message: 'First Name is too short'
+                            },
+                            maxLength: {
+                                value: 16,
+                                message: 'First Name is too long'
+                            }
+                        })}
+                    />
                     {errors.name?.first && (<p>{errors.name?.first?.message}</p>)}
                 </section>
 
                 <section>
-
+                    <label htmlFor="middle_name">Middle Name:</label>
                     <input
                         type="text"
                         placeholder="Middle Name"
                         aria-label="Middle Name"
                         autoComplete="additional-name"
-                        {
-                        ...register(
+                        {...register(
                             "name.middle",
                             {
                                 minLength: {
                                     value: 2,
-                                    message: 'Name is to short'
+                                    message: 'Name is too short'
                                 },
                                 maxLength: {
                                     value: 16,
-                                    message: ' Name is too long'
+                                    message: 'Name is too long'
                                 }
                             }
-                        )
-                        }
+                        )}
                     />
                     {errors.name?.middle && (
                         <p>{errors.name?.middle?.message}</p>
@@ -127,45 +126,44 @@ const Register = () => {
                 </section>
 
                 <section>
+                    <label htmlFor="last_name">Last Name:</label>
                     <input
                         type="text"
                         placeholder="Last Name"
                         aria-label="Last Name"
                         autoComplete="family-name"
-                        {
-                        ...register(
+                        {...register(
                             'name.last',
                             {
                                 required: 'this field is mandatory',
                                 minLength: {
                                     value: 2,
-                                    message: 'Name is to short'
+                                    message: 'Name is too short'
                                 },
                                 maxLength: {
                                     value: 16,
-                                    message: 'Name is to long'
+                                    message: 'Name is too long'
                                 }
                             }
-                        )
-                        }
+                        )}
                     />
                     {errors.name?.last && (<p>{errors.name?.last?.message}</p>)}
                 </section>
 
                 <section>
+                    <label htmlFor="email">Email:</label>
                     <input
                         type="email"
                         placeholder="Email"
                         aria-label="Email"
                         autoComplete="email"
-                        {
-                        ...register(
+                        {...register(
                             'email',
                             {
                                 required: 'this field is mandatory',
                                 minLength: {
                                     value: 5,
-                                    message: 'Email is to short'
+                                    message: 'Email is too short'
                                 },
                                 pattern: {
                                     value: emailPattern,
@@ -173,77 +171,72 @@ const Register = () => {
                                 }
 
                             }
-                        )
-                        }
+                        )}
                     />
                     {errors.email && (<p>{errors.email?.message}</p>)}
                 </section>
 
                 <section>
+                    <label htmlFor="phone">Phone number:</label>
                     <input
                         type="tel"
                         placeholder="Phone number:"
-                        aria-label="phone number:"
+                        aria-label="Phone number:"
                         autoComplete="tel"
-                        {
-                        ...register(
+                        {...register(
                             "phone",
                             {
                                 required: 'This field is mandatory',
                                 pattern: {
                                     value: phonePattern,
-                                    message: 'phone number must start with "05" and without "-"'
+                                    message: 'Phone number must start with "05" and without "-"'
                                 },
                                 minLength: {
                                     value: 10,
-                                    message: 'Phone nubmer is to short'
+                                    message: 'Phone number is too short'
                                 },
                                 maxLength: {
                                     value: 13,
-                                    message: 'Phone number is to long'
+                                    message: 'Phone number is too long'
                                 }
                             }
-                        )
-                        }
+                        )}
                     />
                     {errors.phone && (
                         <p>{errors.phone?.message}</p>
                     )}
                 </section>
+
             </>)}
 
             {part == 2 && (<>
-
-                <section className="relative"
-                >
+                <section className="relative">
+                    <label htmlFor="password">Password:</label>
                     <input
-                        type={password == true ? 'password' : 'text'}
+                        type={password ? 'password' : 'text'}
                         placeholder="Password"
                         aria-label="password"
                         autoComplete="new-password"
-                        {
-                        ...register(
+                        {...register(
                             'password', {
                             required: 'this field is mandatory',
                             pattern: {
                                 value: passwordPattern,
-                                message: 'Password must include one lowercase and Uppercase letter and one special character'
+                                message: 'Password must include one lowercase and uppercase letter and one special character'
                             },
                             minLength: {
                                 value: 7,
-                                message: 'must be between 7-16'
+                                message: 'Must be between 7-16 characters'
                             },
                             maxLength: {
                                 value: 16,
-                                message: 'must be between 7-16'
+                                message: 'Must be between 7-16 characters'
                             }
-                        }
-                        )
-                        }
+                        })}
                         maxLength={16}
                     />
-                    <button className="absolute top-3 right-2 text-complimentry dark:text-complimentry-dark" type="button" onClick={showPass}>
-                        {password == false ? <FaEye /> : <FaEyeSlash />}
+                    <button className="absolute top-8 right-2 text-complimentry dark:text-complimentry-dark" type="button" onClick={showPass}>
+                        {password ? <FaEye /> : <FaEyeSlash />}
                     </button>
                     {errors.password && (
                         <p>{errors.password?.message}</p>
@@ -251,24 +244,22 @@ const Register = () => {
                 </section>
 
                 <section>
+                    <label htmlFor="image_url">Image URL:</label>
                     <input
                         type="text"
-                        placeholder="Image url:"
-                        aria-label="image url"
-                        {
-                        ...register(
+                        placeholder="Image URL"
+                        aria-label="image URL"
+                        {...register(
                             'image.url', {
                             minLength: {
                                 value: 14,
-                                message: "Url is too short"
+                                message: "URL is too short"
                             },
                             pattern: {
                                 value: UrlPattern,
-                                message: 'Invalid Url'
+                                message: 'Invalid URL'
                             }
-                        }
-                        )
-                        }
+                        })}
                     />
                     {errors.image?.url && (
                         <p>{errors.image?.url?.message}</p>
@@ -276,25 +267,22 @@ const Register = () => {
                 </section>
 
                 <section>
+                    <label htmlFor="image_alt_text">Image Alt Text:</label>
                     <input
                         type="text"
-                        placeholder="Image alt text:"
+                        placeholder="Image Alt Text"
                         aria-label="image alt text"
-                        {
-                        ...register(
+                        {...register(
                             'image.alt', {
                             minLength: {
                                 value: 2,
-                                message: "text is too short"
+                                message: "Text is too short"
                             },
                             maxLength: {
                                 value: 256,
-                                message: 'text is too long'
+                                message: 'Text is too long'
                             }
-                        }
-                        )
-
-                        }
+                        })}
                     />
                     {errors.image?.alt && (
                         <p>{errors.image?.alt?.message}</p>
@@ -303,12 +291,12 @@ const Register = () => {
 
 
                 <section>
+                    <label htmlFor="state">State:</label>
                     <input
                         type="text"
-                        placeholder="State:"
+                        placeholder="State"
                         aria-label="state"
-                        {
-                        ...register(
+                        {...register(
                             'address.state', {
                             minLength: {
                                 value: 2,
@@ -318,10 +306,7 @@ const Register = () => {
                                 value: 256,
                                 message: 'State is too long'
                             }
-                        }
-                        )
-
-                        }
+                        })}
                     />
                     {errors.address?.state && (
                         <p>{errors.address?.state?.message}</p>
@@ -329,12 +314,12 @@ const Register = () => {
                 </section>
 
                 <section>
+                    <label htmlFor="country">Country:</label>
                     <input
                         type="text"
-                        placeholder="Country:"
+                        placeholder="Country"
                         aria-label="country"
-                        {
-                        ...register(
+                        {...register(
                             'address.country', {
                             minLength: {
                                 value: 2,
@@ -344,26 +329,23 @@ const Register = () => {
                                 value: 256,
                                 message: 'Country is too long'
                             }
-                        }
-                        )
-
-                        }
+                        })}
                     />
                     {errors.address?.country && (
                         <p>{errors.address?.country?.message}</p>
                     )}
                 </section>
+
             </>)}
 
             {part == 3 && (<>
-
                 <section>
+                    <label htmlFor="city">City:</label>
                     <input
                         type="text"
-                        placeholder="City:"
+                        placeholder="City"
                         aria-label="city"
-                        {
-                        ...register(
+                        {...register(
                             'address.city', {
                             minLength: {
                                 value: 2,
@@ -373,10 +355,7 @@ const Register = () => {
                                 value: 256,
                                 message: 'City is too long'
                             }
-                        }
-                        )
-
-                        }
+                        })}
                     />
                     {errors.address?.city && (
                         <p>{errors.address?.city?.message}</p>
@@ -384,12 +363,12 @@ const Register = () => {
                 </section>
 
                 <section>
+                    <label htmlFor="street">Street:</label>
                     <input
                         type="text"
-                        placeholder="Street:"
+                        placeholder="Street"
                         aria-label="street"
-                        {
-                        ...register(
+                        {...register(
                             'address.street', {
                             minLength: {
                                 value: 2,
@@ -399,10 +378,7 @@ const Register = () => {
                                 value: 256,
                                 message: 'Street is too long'
                             }
-                        }
-                        )
-
-                        }
+                        })}
                     />
                     {errors.address?.street && (
                         <p>{errors.address?.street?.message}</p>
@@ -410,12 +386,12 @@ const Register = () => {
                 </section>
 
                 <section>
+                    <label htmlFor="houseNumber">House Number:</label>
                     <input
                         type="text"
-                        placeholder="House Number:"
+                        placeholder="House Number"
                         aria-label="houseNumber"
-                        {
-                        ...register(
+                        {...register(
                             'address.houseNumber', {
                             minLength: {
                                 value: 2,
@@ -425,10 +401,7 @@ const Register = () => {
                                 value: 256,
                                 message: 'House Number is too long'
                             }
-                        }
-                        )
-
-                        }
+                        })}
                     />
                     {errors.address?.houseNumber && (
                         <p>{errors.address?.houseNumber?.message}</p>
@@ -436,12 +409,12 @@ const Register = () => {
                 </section>
 
                 <section>
+                    <label htmlFor="zip">ZIP Code:</label>
                     <input
                         type="text"
-                        placeholder="ZIP Code:"
+                        placeholder="ZIP Code"
                         aria-label="zip"
-                        {
-                        ...register(
+                        {...register(
                             'address.zip', {
                             minLength: {
                                 value: 2,
@@ -451,10 +424,7 @@ const Register = () => {
                                 value: 256,
                                 message: 'ZIP Code is too long'
                             }
-                        }
-                        )
-
-                        }
+                        })}
                     />
                     {errors.address?.zip && (
                         <p>{errors.address?.zip?.message}</p>
@@ -466,14 +436,10 @@ const Register = () => {
                     <input
                         type="checkbox"
                         aria-label="isBusiness"
-                        {
-                        ...register(
-                            'isBusiness'
-                        )
-
-                        }
+                        {...register('isBusiness')}
                     />
                 </section>
+
                 <button className="disabled:bg-slate-400 disabled:dark:bg-slate-400 bg-complimentry dark:bg-complimentry-dark p-1 rounded">Submit</button>
             </>)}
         </form >

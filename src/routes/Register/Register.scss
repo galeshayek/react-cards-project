@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
+
     input {
         @apply w-full bg-accent dark:bg-accent-dark rounded-md px-2 py-1 border-2 border-primary dark:border-primary-dark;
 
