@@ -8,7 +8,7 @@ import { UrlPattern, emailPattern, passwordPattern, phonePattern } from "../../V
 import { toast } from "react-toastify"
 import { mockValues } from "../../Mock/registerMock"
 import { useNavigate } from "react-router-dom"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, ButtonGroup } from "@chakra-ui/react"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button } from "@chakra-ui/react"
 
 
 const Register = () => {
