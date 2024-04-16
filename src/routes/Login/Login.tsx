@@ -46,7 +46,7 @@ const Login = () => {
     }
     return (
         <section className="flex flex-col gap-3 justify-center items-center h-screen">
-            <Card w={'35vw'} h={300}>
+            <Card w={{ base: '80vw', md: '35vw' }} h={300}>
                 <form className="w-3/4 flex flex-col mx-auto justify-evenly h-full" noValidate onSubmit={handleSubmit(onSubmit)}>
                     <input type="email"
                         placeholder="Enter your Email"

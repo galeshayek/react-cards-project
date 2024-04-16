@@ -8,7 +8,7 @@ import { UrlPattern, emailPattern, passwordPattern, phonePattern } from "../../V
 import { toast } from "react-toastify"
 import { mockValues } from "../../Mock/registerMock"
 import { useNavigate } from "react-router-dom"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button } from "@chakra-ui/react"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, ButtonGroup } from "@chakra-ui/react"
 
 
 const Register = () => {
@@ -71,6 +71,10 @@ const Register = () => {
             </BreadcrumbItem>
 
         </Breadcrumb>
+        <div className="flex mx-auto pt-5 gap-3">
+            <Button w={'130px'} onClick={() => setPart(prev => prev <= 1 ? prev = 1 : prev - 1)}>Previous</Button>
+            <Button w={'130px'} onClick={() => setPart(prev => prev >= 3 ? prev = 3 : prev + 1)}>Next</Button>
+        </div>
         <form noValidate onSubmit={handleSubmit(onSubmit)} className=" pt-10 registerForm w-3/4 mx-auto flex flex-col  items-center justify-center gap-x-3 gap-y-10">
             {part == 1 && (<>
                 <section>
@@ -472,7 +476,6 @@ const Register = () => {
                 </section>
                 <button className="disabled:bg-slate-400 disabled:dark:bg-slate-400 bg-complimentry dark:bg-complimentry-dark p-1 rounded">Submit</button>
             </>)}
-
         </form >
     </div>)
 }
