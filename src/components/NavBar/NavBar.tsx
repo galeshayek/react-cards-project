@@ -40,6 +40,7 @@ const NavBar = (props?: any) => {
                         role="searchbox"
                         aria-label="searchbox"
                         onChange={(e) => handleSearch(e.target.value)}
+                        value={searchValue}
                     />
                 </div>
                 {isBiz && (<NavLink to={'/create'} className={({ isActive }) => isActive ? ` text-complimentry dark:text-complimentry-dark` : ''}>Create Card</NavLink>)}

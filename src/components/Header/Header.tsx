@@ -7,7 +7,7 @@ import { SearchContext } from "../../contexts/SearchContext"
 
 const Header = () => {
     const inputRef = useRef<HTMLInputElement>(null)
-    const { handleSearch } = useContext(SearchContext);
+    const { handleSearch, searchValue } = useContext(SearchContext);
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef<HTMLButtonElement>(null)
     const [isMobile, setMobile] = useState(false)
@@ -67,6 +67,7 @@ const Header = () => {
                         aria-label="searchbox"
                         onChange={(e) => handleSearch(e.target.value)}
                         onBlur={() => onSearch.off()}
+                        value={searchValue}
                     />
                 )}
 
