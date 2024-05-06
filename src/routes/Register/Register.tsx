@@ -23,7 +23,6 @@ const Register = () => {
     } = useForm<RegisterType>({
         mode: "all",
         delayError: 1000,
-        defaultValues: mockValues,
     })
     const onSubmit: SubmitHandler<RegisterType> = (data) => {
         return (

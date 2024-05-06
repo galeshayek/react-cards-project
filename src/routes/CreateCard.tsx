@@ -8,7 +8,6 @@ import { toast } from "react-toastify"
 const CreateCard = () => {
     const { register, handleSubmit, formState: { errors }, } = useForm<CreateCardType>({
         mode: 'all',
-        defaultValues: CardMock,
     })
     const onSubmit: SubmitHandler<CreateCardType> = (data) => {
         return (
