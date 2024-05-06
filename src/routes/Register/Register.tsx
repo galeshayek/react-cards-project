@@ -6,7 +6,6 @@ import { FaEye, FaEyeSlash } from "react-icons/fa"
 import { postUser } from "../../services/register"
 import { UrlPattern, emailPattern, passwordPattern, phonePattern } from "../../Validations/validations"
 import { toast } from "react-toastify"
-import { mockValues } from "../../Mock/registerMock"
 import { useNavigate } from "react-router-dom"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button } from "@chakra-ui/react"
 
