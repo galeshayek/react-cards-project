@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { CardError, CardType, EditCardtype } from '../@types/types'
-import { updateCard } from '../services/cards'
+import { GetCardById, updateCard } from '../services/cards'
 import React from 'react'
 import { FaEdit } from 'react-icons/fa'
 import { toast } from 'react-toastify'
@@ -19,6 +19,26 @@ export const EditCard: React.FC<EditCardtype> = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { register, handleSubmit, formState: { errors } } = useForm<CardType>({
         mode: 'all',
+        defaultValues: {
+            title: props.title,
+            subtitle: props.subtitle,
+            description: props.description,
+            phone: props.phone,
+            email: props.email,
+            web: props.web,
+            image: {
+                url: props.image.url,
+                alt: props.image.alt,
+            },
+            address: {
+                state: props.address.state,
+                country: props.address.country,
+                city: props.address.city,
+                street: props.address.street,
+                houseNumber: props.address.houseNumber,
+                zip: props.address.zip,
+            },
+        },
     })
     const onSubmit: SubmitHandler<CardType> = (data) => {
         return (
