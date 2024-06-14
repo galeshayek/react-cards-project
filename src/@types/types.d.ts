@@ -3,7 +3,6 @@ import { JSXElementConstructor, ReactNode, } from "react";
 export type FCC = (props: { children: ReactNode }) => ReactNode
 
 export type JwtDecodeType = {
-
     iat: number;
     isAdmin: boolean;
     isBusiness: boolean;

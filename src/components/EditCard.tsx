@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { CardError, CardType, EditCardtype } from '../@types/types'
-import { GetCardById, updateCard } from '../services/cards'
+import { updateCard } from '../services/cards'
 import React from 'react'
 import { FaEdit } from 'react-icons/fa'
 import { toast } from 'react-toastify'
